@@ -48,18 +48,34 @@ services:
       retries: 3
       start_period: 60s
 
+  litellm:
+    image: ghcr.io/berriai/litellm:main-latest
+    container_name: litellm
+    restart: unless-stopped
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./litellm-config.yaml:/app/config.yaml
+    command:
+      - "--config"
+      - "/app/config.yaml"
+      - "--port"
+      - "4000"
+    depends_on:
+      - vllm
+
   open-webui:
     image: ghcr.io/open-webui/open-webui:main
     container_name: open-webui
     restart: unless-stopped
     depends_on:
-      - vllm
+      - litellm
     ports:
       - "${OPEN_WEBUI_PORT:-3000}:8080"
     volumes:
       - open-webui-data:/app/backend/data
     environment:
-      - OPENAI_API_BASE_URL=http://vllm:8000/v1
+      - OPENAI_API_BASE_URL=http://litellm:4000/v1
       - OPENAI_API_KEY=EMPTY
       - WEBUI_AUTH=false
       - OLLAMA_BASE_URL=disabled

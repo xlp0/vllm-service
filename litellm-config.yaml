@@ -2,19 +2,19 @@ model_list:
   - model_name: Qwen/Qwen2.5-7B-Instruct
     litellm_params:
       model: openai/Qwen/Qwen2.5-7B-Instruct
-      api_base: http://127.0.0.1:8000/v1
+      api_base: http://vllm:8000/v1
       api_key: EMPTY
 
   - model_name: Qwen/Qwen3.6-35B-A3B-FP8
     litellm_params:
       model: openai/Qwen/Qwen3.6-35B-A3B-FP8
-      api_base: http://127.0.0.1:8000/v1
+      api_base: http://vllm:8000/v1
       api_key: EMPTY
 
   - model_name: Qwen/Qwen2.5-0.5B-Instruct
     litellm_params:
       model: openai/Qwen/Qwen2.5-0.5B-Instruct
-      api_base: http://127.0.0.1:8000/v1
+      api_base: http://vllm:8000/v1
       api_key: EMPTY
 
 router_settings:
