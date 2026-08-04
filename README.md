@@ -4,6 +4,16 @@ A high-performance LLM serving stack powered by **vLLM** and **Open WebUI**, sup
 
 ---
 
+## 📚 Documentation & Technical Guides
+
+Detailed architectural analysis, empirical observations, gotchas, and critical engineering suggestions are organized in the [`docs/`](file:///home/pc/Documents/AIProjects/vllm-service/docs) directory:
+
+- 🏗️ **[Architectural Findings & Stack Overview](file:///home/pc/Documents/AIProjects/vllm-service/docs/architectural_findings.md)**: Deep dive into deployment modes, cluster vs single-node paradigms, and model specs.
+- ⚠️ **[Technical Observations & Configuration Gotchas](file:///home/pc/Documents/AIProjects/vllm-service/docs/observations_and_gotchas.md)**: Full breakdown of resolved issues (HF cache `~` expansion, Open WebUI RAG engine crashes, auto tool choice flags, 32k context expansion, IPv6 socket resets).
+- 💡 **[Critical Suggestions & Best Practices](file:///home/pc/Documents/AIProjects/vllm-service/docs/critical_suggestions.md)**: Actionable recommendations for LiteLLM fallback routing, memory KV cache optimization, and CI/CD service testing.
+
+---
+
 ## 🏗️ Architecture
 
 Two deployment modes are supported:
