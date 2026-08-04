@@ -1,0 +1,28 @@
+model_list:
+  - model_name: Kwaipilot/KAT-Coder-V2.5-Dev
+    litellm_params:
+      model: openai/Kwaipilot/KAT-Coder-V2.5-Dev
+      api_base: http://vllm:8000/v1
+      api_key: EMPTY
+
+  - model_name: cyankiwi/KAT-Coder-V2.5-Dev-AWQ-INT4
+    litellm_params:
+      model: openai/cyankiwi/KAT-Coder-V2.5-Dev-AWQ-INT4
+      api_base: http://vllm:8000/v1
+      api_key: EMPTY
+
+  - model_name: Qwen/Qwen2.5-7B-Instruct
+    litellm_params:
+      model: openai/Qwen/Qwen2.5-7B-Instruct
+      api_base: http://vllm:8000/v1
+      api_key: EMPTY
+
+  - model_name: Qwen3.6-35B-A3B
+    litellm_params:
+      model: openai/Qwen3.6-35B-A3B
+      api_base: http://vllm:8000/v1
+      api_key: EMPTY
+
+litellm_settings:
+  drop_params: true
+  set_verbose: false

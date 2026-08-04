@@ -21,10 +21,12 @@ services:
               count: all
               capabilities: [gpu]
     command: >
-      --model ${MODEL_NAME:-Qwen/Qwen2.5-7B-Instruct}
+      --model ${MODEL_NAME:-cyankiwi/KAT-Coder-V2.5-Dev-AWQ-INT4}
       --gpu-memory-utilization ${GPU_MEMORY_UTILIZATION:-0.90}
       --max-model-len ${MAX_MODEL_LEN:-4096}
       --tensor-parallel-size ${TENSOR_PARALLEL_SIZE:-1}
+      --trust-remote-code
+      --language-model-only
       --enforce-eager
       --host 0.0.0.0
       --port 8000
@@ -53,6 +55,12 @@ services:
       - OPENAI_API_KEY=EMPTY
       - WEBUI_AUTH=false
       - OLLAMA_BASE_URL=disabled
+      - HF_HUB_OFFLINE=1
+      - TRANSFORMERS_OFFLINE=1
+      - RAG_EMBEDDING_ENGINE=""
+      - ENABLE_RAG_WEB_SEARCH=true
+      - WEB_SEARCH_ENGINE=duckduckgo
+      - ENABLE_WEB_SEARCH=true
 
 volumes:
   open-webui-data:
