@@ -1,0 +1,23 @@
+# Environment files (contains credentials/tokens)
+.env
+.env.local
+*.env
+
+# Cache directories
+__pycache__/
+*.pyc
+.pytest_cache/
+.cache/
+
+# Docker volume mounts / data directories
+open-webui-data/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
